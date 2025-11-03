@@ -1,4 +1,5 @@
 from upload import upload_image
+from ocr import extract_text_from_image
 import sys
 
 def main():
@@ -14,10 +15,12 @@ def main():
         except Exception as e:
             print(f"Error uploading image: {e}")
             sys.exit(1)
-        finally:
-            sys.exit(0)
+        
+    # clean image (not implemented yet)
     
     # run ocr processing (not implemented yet)
+    ocr_data = extract_text_from_image(image_path)
+    print(ocr_data)
     
 
 
