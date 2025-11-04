@@ -1,5 +1,6 @@
 from upload import upload_image
 from ocr import ocr_image
+from parse import parse_latex
 import sys
 
 def main():
@@ -19,9 +20,8 @@ def main():
 
     # run ocr processing (not implemented yet)
     ocr_data = ocr_image(image_path)
-    print(ocr_data)
-    
-
+    json_data = parse_latex(ocr_data)
+    print(json_data)
 
 if __name__ == "__main__":
     main()
